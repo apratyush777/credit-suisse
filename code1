@@ -1,0 +1,16 @@
+arr = list(map(int,input().split()))
+share_arr = []
+for i in range(1,arr[0]+1):
+    share_arr.append(arr[i])
+    
+
+profit = []
+for i in range(arr[0]-1):
+    diffarr=[]
+    for j in range(i+1,arr[0]):
+        diff = share_arr[j] - share_arr[i] 
+        diffarr.append(diff)
+    maxx = max(diffarr)
+    profit.append(maxx)
+    
+print(max(profit))
